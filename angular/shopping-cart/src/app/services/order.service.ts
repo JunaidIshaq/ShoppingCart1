@@ -12,23 +12,23 @@ export class OrderService {
 
   private readonly HEADERS = new HttpHeaders({ 'Content-Type':  'application/json' });
   private http: HttpClient;
-  private readonly orderUrl = StringStorage.apiUrl + "orders";
+  private readonly orderUrl = StringStorage.apiUrl + 'orders';
 
   constructor(http: HttpClient) {
     this.http = http;
   }
 
   makeOrder(customerId: number, cardNumber: string): Observable<IOrder> {
-    let vm: CustomerInfoViewModel = new CustomerInfoViewModel();
+    const vm: CustomerInfoViewModel = new CustomerInfoViewModel();
     vm.customerId = customerId;
     vm.cardNumber = cardNumber;
-    let order$ = this.http.post<IOrder>(this.orderUrl, vm, { headers: this.HEADERS });
+    const order$ = this.http.post<IOrder>(this.orderUrl, vm, { headers: this.HEADERS });
     return order$;
   }
 
   getOrders(customerId: number): Observable<IOrder[]> {
-    let url = this.orderUrl + "/" + customerId;
-    let orders$ = this.http.get<IOrder[]>(url, { headers: this.HEADERS });
+    const url = this.orderUrl + '/' + customerId;
+    const orders$ = this.http.get<IOrder[]>(url, { headers: this.HEADERS });
     return orders$;
   }
 

@@ -7,8 +7,11 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
-@Repository
+@Repository("itemRepo")
 public interface ItemRepository extends JpaRepository<Item, Integer> {
+
     List<Item> findAll();
+
     Optional<Item> findById(Integer integer);
+
 }

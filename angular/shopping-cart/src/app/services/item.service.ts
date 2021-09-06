@@ -11,8 +11,8 @@ export class ItemService {
 
   private readonly HEADERS = new HttpHeaders({ 'Content-Type':  'application/json' });
   private http: HttpClient;
-  private readonly itemUrl = StringStorage.apiUrl + "items";
-  
+  private readonly itemUrl = StringStorage.apiUrl + 'items';
+
   constructor(http: HttpClient) {
     this.http = http;
   }

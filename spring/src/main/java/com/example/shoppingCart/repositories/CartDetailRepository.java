@@ -4,6 +4,8 @@ import com.example.shoppingCart.models.CartDetail;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
+@Repository("crudDetailRepo")
 public interface CartDetailRepository extends JpaRepository<CartDetail, Integer> {
+
+
 }
